@@ -1,16 +1,16 @@
-export const RATE_UP = 'RATE_UP'
-export const RATE_DOWN = 'RATE_DOWN'
-export const RATE_RANDOM = 'RATE_RANDOM'
+export const POINTS_ADD = 'POINTS_ADD'
+export const POINTS_SUBTRACT = 'POINTS_SUBTRACT'
+export const POINTS_RANDOM = 'POINTS_RANDOM'
 
 
 export function rateUp(payload) {
-  return { type: RATE_UP, payload }
+  return { type: POINTS_ADD, payload }
 }
 
 export function rateDown(payload) {
-  return { type: RATE_DOWN, payload }
+  return { type: POINTS_SUBTRACT, payload }
 }
 
 export function rateRandom(payload) {
-  return { type: RATE_RANDOM, payload }
+  return { type: POINTS_RANDOM, payload }
 }

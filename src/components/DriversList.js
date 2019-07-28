@@ -6,17 +6,21 @@ const mapStateToProps = state => {
   return { drivers: state.drivers };
 };
 
-const ConnectedList = ({drivers}) => (
-  <ul className="drivers-list">
-    {drivers.map((el) => (
-      <Driver 
-        key={el.id} 
-        name={el.name} 
-        team={el.team} 
-        points={el.points}
-      />
-    ))}
-  </ul>
+const ConnectedList = ({drivers, dispatch}) => (
+  <div>
+    <button onClick={() => dispatch({ type: 'POINTS_RANDOM' })}>Randomize Points</button>
+
+    <ul className="drivers-list">
+      {drivers.map((el) => (
+        <Driver 
+          key={el.id} 
+          name={el.name} 
+          team={el.team} 
+          points={el.points}
+        />
+      ))}
+    </ul>
+  </div>
 );
 const List = connect(mapStateToProps)(ConnectedList);
 

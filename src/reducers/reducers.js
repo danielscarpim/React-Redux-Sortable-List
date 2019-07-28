@@ -1,7 +1,7 @@
 import {
-  RATE_UP,
-  RATE_DOWN,
-  RATE_RANDOM,
+  POINTS_ADD,
+  POINTS_SUBTRACT,
+  POINTS_RANDOM,
 } from '../actions/actions'
 
 const initialState = {
@@ -30,13 +30,16 @@ const initialState = {
 };
 function rootReducer(state = initialState, action) {
   switch (action.type) {
-    case RATE_UP:
+    case POINTS_ADD:
+      console.log('add');
       return Object.assign({}, state, {
       })
-    case RATE_DOWN:
+    case POINTS_SUBTRACT:
+      console.log('subtract');
       return Object.assign({}, state, {
       })
-    case RATE_RANDOM:
+    case POINTS_RANDOM:
+      console.log('random');
       return Object.assign({}, state, {
       })
     default:
