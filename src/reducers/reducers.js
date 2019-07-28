@@ -27,6 +27,7 @@ function rootReducer(state = initialState, action) {
   switch (action.type) {
     case 'INCREMENT':
       console.log('add');
+      console.log(action.payload);
       return Object.assign({}, state, {
       })
     case 'DECREMENT':

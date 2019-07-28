@@ -5,9 +5,9 @@ class Driver extends React.Component {
   render() {
     return (
       <li>
-        <button onClick={() => this.props.dispatch({type: 'DECREMENT'})}>-</button>
+        <button value={this.props.id} onClick={(e) => this.props.decrement(e.target.value)}>-</button>
         {this.props.points}
-        <button onClick={() => this.props.dispatch({type: 'INCREMENT'})}>+</button>
+        <button value={this.props.id} onClick={(e) => this.props.increment(e.target.value)}>+</button>
         {this.props.name} - {this.props.team}
       </li>
     );
