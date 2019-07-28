@@ -3,7 +3,7 @@ import React from "react";
 class Driver extends React.Component {
   render() {
     return (
-      <li>{this.props.name} - {this.props.team} | {this.props.rating}</li>
+      <li>{this.props.name} - {this.props.team} | {this.props.points}</li>
     );
   }
 }
