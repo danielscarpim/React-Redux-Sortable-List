@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Driver from './components/Driver';
+
 class f1Drivers extends Component {
   constructor() {
     super();
@@ -28,9 +30,10 @@ class f1Drivers extends Component {
     };
   }
   render() {
-    const { drivers } = this.state;
-    return <ul>{drivers.map(el => <li key={el.id}>{el.name} - {el.team} | {el.rating}</li>)}</ul>;
-  }
+    return this.state.drivers.map((el) => {
+      return <Driver key={el.id} name={el.name} team={el.team} id={el.id} rating={el.rating} />;
+    })
+  };
 }
 
 export default f1Drivers;
