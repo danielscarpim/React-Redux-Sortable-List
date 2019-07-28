@@ -23,6 +23,23 @@ const initialState = {
   ]
 };
 
+function sortArray(array) {
+  console.log('array: ', array);
+  return array.slice().sort((a, b) => {
+    if (a.points < b.points) {
+      return 1;
+    }
+
+    if (a.points > b.points) {
+      return -1;
+    }
+
+    if (a.points === b.points) {
+      return 0;
+    }
+  })
+}
+
 function updateState(state, id, type) {
   const newState = Object.assign({}, state);
   const newDrivers = newState.drivers.map((driver, index) => {
@@ -38,7 +55,7 @@ function updateState(state, id, type) {
     return driver;
   });
 
-  newState.drivers = newDrivers;
+  newState.drivers = sortArray(newDrivers);
 
   return newState;
 }
