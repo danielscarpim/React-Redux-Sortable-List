@@ -28,14 +28,10 @@ function sortArray(array) {
     if (a.points < b.points) {
       return 1;
     }
-
     if (a.points > b.points) {
       return -1;
     }
-
-    if (a.points === b.points) {
-      return 0;
-    }
+    return 0;
   })
 }
 
