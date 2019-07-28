@@ -5,10 +5,10 @@ class Driver extends React.Component {
   render() {
     return (
       <li>
-      {this.props.name} - {this.props.team}
-        <button onClick={() => this.props.dispatch({ type: 'POINTS_SUBTRACT' })}>-</button>
+        <button onClick={() => this.props.dispatch({type: 'DECREMENT'})}>-</button>
         {this.props.points}
-        <button onClick={() => this.props.dispatch({ type: 'POINTS_ADD' })}>+</button>
+        <button onClick={() => this.props.dispatch({type: 'INCREMENT'})}>+</button>
+        {this.props.name} - {this.props.team}
       </li>
     );
   }

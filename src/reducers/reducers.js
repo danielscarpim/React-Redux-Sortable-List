@@ -1,9 +1,3 @@
-import {
-  POINTS_ADD,
-  POINTS_SUBTRACT,
-  POINTS_RANDOM,
-} from '../actions/actions'
-
 const initialState = {
   drivers: [
     { name: "Sebastian Vettel", team: 'Ferrari', id: 1, points: 0 },
@@ -28,17 +22,18 @@ const initialState = {
     { name: "Robert Kubica", team: 'Williams', id: 20, points: 0 }
   ]
 };
+
 function rootReducer(state = initialState, action) {
   switch (action.type) {
-    case POINTS_ADD:
+    case 'INCREMENT':
       console.log('add');
       return Object.assign({}, state, {
       })
-    case POINTS_SUBTRACT:
+    case 'DECREMENT':
       console.log('subtract');
       return Object.assign({}, state, {
       })
-    case POINTS_RANDOM:
+    case 'RANDOM':
       console.log('random');
       return Object.assign({}, state, {
       })

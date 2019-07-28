@@ -8,7 +8,7 @@ const mapStateToProps = state => {
 
 const ConnectedList = ({drivers, dispatch}) => (
   <div>
-    <button onClick={() => dispatch({ type: 'POINTS_RANDOM' })}>Randomize Points</button>
+    <button onClick={() => dispatch({ type: 'RANDOM' })}>Randomize Points</button>
 
     <ul className="drivers-list">
       {drivers.map((el) => (
