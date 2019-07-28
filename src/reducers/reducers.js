@@ -24,7 +24,6 @@ const initialState = {
 };
 
 function sortArray(array) {
-  console.log('array: ', array);
   return array.slice().sort((a, b) => {
     if (a.points < b.points) {
       return 1;
@@ -41,8 +40,15 @@ function sortArray(array) {
 }
 
 function updateState(state, id, type) {
+  // Maximun number of points possible in 2019 season: 
+  // 25 points per victory * 21 races + 21 points for fastest lap
+  const maxPoints = 546;
   const newState = Object.assign({}, state);
   const newDrivers = newState.drivers.map((driver, index) => {
+    if (type === 'RANDOM') {
+      driver.points = Math.floor(Math.random() * Math.floor(maxPoints));
+    }
+
     if (driver.id === Number(id)) {
       if (type === 'INCREMENT') {
         driver.points++;
@@ -69,9 +75,7 @@ function rootReducer(state = initialState, action) {
     case 'DECREMENT':
       return Object.assign({}, updateState(state, driverId, action.type));
     case 'RANDOM':
-      console.log('random');
-      return Object.assign({}, state, {
-      })
+      return Object.assign({}, updateState(state, driverId, action.type));
     default:
       return state
   }
