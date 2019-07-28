@@ -10,14 +10,16 @@ const mapDispatchToProps = (dispatch) => {
   return {
     increment: (el) => dispatch({ type: 'INCREMENT', payload: el}),
     decrement: (el) => dispatch({ type: 'DECREMENT', payload: el}),
-    random: (el) => dispatch({ type: 'RANDOM', payload: el})
+    random: (el) => dispatch({ type: 'RANDOM', payload: el}),
+    reset: (el) => dispatch({ type: 'RESET', payload: el })
   }
 }
 
-const ConnectedList = ({drivers, random, increment, decrement}) => (
+const ConnectedList = ({drivers, random, reset, increment, decrement}) => (
   <div>
     <div className="header__buttons">
       <button className="button" onClick={random}>Randomize Points</button>
+      <button className="button" onClick={reset}>Reset</button>
     </div>
 
     <ul className="drivers-list">

@@ -5,7 +5,7 @@
 .header {
   color: white;
   background: #212121;
-  padding: 40px;
+  padding: 30px 40px;
 }
 
 .header__title {
@@ -22,6 +22,7 @@
   color:  #000;
   background-color:#ffffff;
   padding: 6px 20px;
+  margin-right: 20px;
 }
 
 .drivers-list {
@@ -76,9 +77,15 @@
   border-radius: 5px;
   border: 0;
   font-size: 20px;
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
 }
 
 .button:focus {
   outline: none;
+}
+
+.button:hover {
+  opacity: 1;
 }
 

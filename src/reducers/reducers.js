@@ -45,6 +45,10 @@ function updateState(state, id, type) {
       driver.points = Math.floor(Math.random() * Math.floor(maxPoints));
     }
 
+    if (type === 'RESET') {
+      driver.points = 0;
+    }
+
     if (driver.id === Number(id)) {
       if (type === 'INCREMENT') {
         driver.points++;
