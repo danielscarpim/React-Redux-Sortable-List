@@ -23,17 +23,34 @@ const initialState = {
   ]
 };
 
+function updateState(state, id, type) {
+  const newState = Object.assign({}, state);
+  const newDrivers = newState.drivers.map((driver, index) => {
+    if (driver.id === Number(id)) {
+      if (type === 'INCREMENT') {
+        driver.points++;
+      }
+      if ((type === 'DECREMENT') && (driver.points >= 1)) {
+        driver.points--;
+      }
+      return driver;
+    }
+    return driver;
+  });
+
+  newState.drivers = newDrivers;
+
+  return newState;
+}
+
 function rootReducer(state = initialState, action) {
+  const driverId = Number(action.payload);
+
   switch (action.type) {
     case 'INCREMENT':
-      console.log('add');
-      console.log(action.payload);
-      return Object.assign({}, state, {
-      })
+      return Object.assign({}, updateState(state, driverId, action.type));
     case 'DECREMENT':
-      console.log('subtract');
-      return Object.assign({}, state, {
-      })
+      return Object.assign({}, updateState(state, driverId, action.type));
     case 'RANDOM':
       console.log('random');
       return Object.assign({}, state, {
