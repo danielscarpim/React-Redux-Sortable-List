@@ -69,16 +69,7 @@ function updateState(state, id, type) {
 function rootReducer(state = initialState, action) {
   const driverId = Number(action.payload);
 
-  switch (action.type) {
-    case 'INCREMENT':
-      return Object.assign({}, updateState(state, driverId, action.type));
-    case 'DECREMENT':
-      return Object.assign({}, updateState(state, driverId, action.type));
-    case 'RANDOM':
-      return Object.assign({}, updateState(state, driverId, action.type));
-    default:
-      return state
-  }
+  return Object.assign({}, updateState(state, driverId, action.type));
 };
 
 export default rootReducer;
