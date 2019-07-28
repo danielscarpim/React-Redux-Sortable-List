@@ -1,33 +1,84 @@
-.App {
+.app {
+  
+}
+
+.header {
+  color: white;
+  background: #212121;
+  padding: 40px;
+}
+
+.header__title {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.header__buttons {
+  padding: 16px 40px;
+  background: #1c1c1c;
+}
+
+.header__buttons .button {
+  color:  #000;
+  background-color:#ffffff;
+  padding: 6px 20px;
+}
+
+.drivers-list {
+  padding: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.drivers-list {
+  border-top: 1px solid lightgrey;
+}
+
+.drivers-list__item {
+  padding: 12px 40px;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.column--points {
+  display: flex;
+  flex-direction: row;
+  flex: 0;
+}
+
+.column--points .points{
+  width: 60px;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.column--name {
+  padding-left: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.column--team {
+  color: gray;
 }
 
-.App-link {
-  color: #61dafb;
+.button {
+  color: #ffffff;
+  background-color: #e10600;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 0;
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button:focus {
+  outline: none;
 }
+

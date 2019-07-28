@@ -16,7 +16,9 @@ const mapDispatchToProps = (dispatch) => {
 
 const ConnectedList = ({drivers, random, increment, decrement}) => (
   <div>
-    <button onClick={random}>Randomize Points</button>
+    <div className="header__buttons">
+      <button className="button" onClick={random}>Randomize Points</button>
+    </div>
 
     <ul className="drivers-list">
       {drivers.map((el) => (
