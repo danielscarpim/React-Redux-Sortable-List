@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Driver from './components/Driver';
+import Driver from './Driver';
 
 class f1Drivers extends Component {
   constructor() {
