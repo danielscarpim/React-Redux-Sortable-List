@@ -1,4 +1,4 @@
-[## Live demo ->](http://danielscarpim.com/react-list/)
+## [Live demo ->](http://danielscarpim.com/react-list/)
 
 ----
 
